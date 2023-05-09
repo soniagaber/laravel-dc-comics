@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts/app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
+<div id="app-content">
+    <div class="container">
+        @foreach ($comics as $comic)
+         <div class="col-4 comic-card">
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-
-    
-</body>
-
-</html>
+            <div class="comic-card-inner">
+                <div class="card-container">
+                    <img src="{{$comic['thumb']}}" alt="immagine pasta">
+                    {{$comic['series']}}
+                </div>
+            </div>
+         </div>
+        @endforeach 
+        <!--<AppCard v-for="card in cards" :immagine="card.thumb" :text="card.series"></AppCard>-->
+    </div>
+    <button> LOAD MORE </button>
+</div>
+@endsection

@@ -1,1 +1,84 @@
 @import '~bootstrap/scss/bootstrap';
+
+nav{
+    background-color: white;
+    margin-top: 5px;
+    height: 80px;
+    width: 100%;
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    #nav-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+
+        a{
+            cursor: pointer;
+            height: 100%;
+            text-decoration-line: none;
+
+            strong{
+                color: black;
+            }
+            strong:hover{
+                color: #0282F9;
+            }
+        }
+        #links-container{
+
+        font-size: 0.8em;
+        color: black;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        gap: 80px;
+        }
+    }
+
+    img{
+    height: 70%;
+    }
+}
+}
+
+ #app-footer{
+    width: 100%;
+    background-image: url('../img/footer-bg.jpg');
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 200px;
+ }
+
+ #app-footer img{
+    height: 390px;
+    position: absolute;
+    right: 230px;
+    top: -65px;
+ }
+
+ ul{list-style-type: none;
+margin: 10px 0;}
+
+ li{
+    font-size: 0.54em;
+    color: gray;
+    line-height: 0.55em;
+    cursor: pointer;
+ }
+
+ .links-container{
+    display: flex;
+    gap: 30px;
+ }
+
+ 
