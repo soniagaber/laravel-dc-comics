@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use NumberFormatter;
 
 class ComicController extends Controller
 {
@@ -138,7 +139,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData=$request->all();
+
+        $formData['price']='$'. number_format($formData['price'], 2);
+
+        $newComic= new Comic();
+        $newComic->fill($formData);
+        $newComic->save();
+
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
