@@ -1,19 +1,20 @@
-
-    <div>
+<div id="app-footer">
+    <div class="container">
         <div class="links-container">
             <div>
                 <div id="link-sx">
                     @foreach ($footerLinksSx as $footerLinkSx)
                      <strong>{{ $footerLinkSx['title'] }}</strong>
+                   
+                        <ul >
+                            @foreach ($footerLinkSx['links'] as $link)
+                            <li>
+                                {{ $link }}
+                            </li>
+                            @endforeach
+                        </ul>
                     @endforeach
-            <ul >
-                @foreach ($footerLinkSx['links'] as $link)
-                <li>
-                    {{ $link }}
-                </li>
-                @endforeach
-            </ul>
-        </div>
+                </div>
             </div>
         <div id="link-centro" >
             @foreach ($footerLinksCentro as $footerLinkCentro)
@@ -42,3 +43,4 @@
         </div>
         <img src="{{ Vite::asset('resources/img/dc-logo-bg.png') }}" alt="">
     </div>
+</div>

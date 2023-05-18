@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ComicController;
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $comics = config('comics');
-    $headerlinks = config('headerlinks');
-    $footerLinksSx = config('footerLinksSx');
-    $footerLinksCentro = config('footerLinksCentro');
-    $footerLinksDx = config('footerLinksDx');
-    return view('home', compact('comics', 'headerlinks', 'footerLinksSx', 'footerLinksCentro', 'footerLinksDx'));
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
+
+Route::resource('/comics', ComicController::class);
