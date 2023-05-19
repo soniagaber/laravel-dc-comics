@@ -19,5 +19,7 @@
                         {{$comic->sale_date}}</div>
                         <div class="row"><strong>TIPO:</strong>
                             {{$comic->type}}</div>
+
+                            <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Modifica il fumetto</a>
     </div>
 @endsection

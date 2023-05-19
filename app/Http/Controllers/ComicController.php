@@ -220,7 +220,58 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $footerLinksSx=[
+            [
+                "title"=>'DC COMICS',
+                "links"=>[
+                    'Characters',
+                    'Comics',
+                    'Movies',
+                    'TV',
+                    'Games',
+                    'Videos',
+                    'News'
+                ]
+            ],
+            [
+                "title"=>"SHOP",
+                "links"=>[
+                    'Shop DC',
+                    'Shop DC Collectibles',
+                ]
+            ]
+        ];
+        $footerLinksCentro=[
+            [
+                "title"=>"DC",
+                "links"=>[
+                    'Terms of Use',
+                    'Privacy Policy (new)',
+                    'Ad Choices',
+                    'Advertising',
+                    'Jobs',
+                    'Subcriptions',
+                    'Talent Workshops',
+                    'CPSC Certificates',
+                    'Ratings',
+                    'Shop Help',
+                    'Contact Us'
+                ]
+            ]
+         ];
+         $footerLinksDx =[
+            [
+                    "title"=>"SITES",
+                    "links"=>[
+                        'DC',
+                        'MAD Magazines',
+                        'DC Kids',
+                        'DC Universe',
+                        'DC Power Visa',
+                    ]
+                ],
+            ];
+        return view('comics/edit', compact('footerLinksSx', 'footerLinksCentro', 'footerLinksDx', 'comic'));
     }
 
     /**
@@ -232,7 +283,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+        $comic->update($formData);
+        $comic->save();
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
