@@ -21,5 +21,10 @@
                             {{$comic->type}}</div>
 
                             <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Modifica il fumetto</a>
+                            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Cancella il fumetto</button>
+                            </form>
     </div>
 @endsection
