@@ -16,57 +16,10 @@ class ComicController extends Controller
     public function index()
     {   
         $comics=Comic::all();
-        $footerLinksSx=[
-            [
-                "title"=>'DC COMICS',
-                "links"=>[
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'TV',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                "title"=>"SHOP",
-                "links"=>[
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ]
-        ];
-        $footerLinksCentro=[
-            [
-                "title"=>"DC",
-                "links"=>[
-                    'Terms of Use',
-                    'Privacy Policy (new)',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subcriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ]
-         ];
-         $footerLinksDx =[
-            [
-                    "title"=>"SITES",
-                    "links"=>[
-                        'DC',
-                        'MAD Magazines',
-                        'DC Kids',
-                        'DC Universe',
-                        'DC Power Visa',
-                    ]
-                ],
-            ];
+        $footerLinksSx = config('footerLinksSx');
+        $footerLinksCentro = config('footerLinksCentro');
+        $footerLinksDx = config('footerLinksDx');
+        
         return view('comics/index', compact('footerLinksSx', 'footerLinksCentro', 'footerLinksDx', 'comics'));
     }
 
@@ -77,57 +30,9 @@ class ComicController extends Controller
      */
     public function create()
     {   
-        $footerLinksSx=[
-            [
-                "title"=>'DC COMICS',
-                "links"=>[
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'TV',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                "title"=>"SHOP",
-                "links"=>[
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ]
-        ];
-        $footerLinksCentro=[
-            [
-                "title"=>"DC",
-                "links"=>[
-                    'Terms of Use',
-                    'Privacy Policy (new)',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subcriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ]
-         ];
-         $footerLinksDx =[
-            [
-                    "title"=>"SITES",
-                    "links"=>[
-                        'DC',
-                        'MAD Magazines',
-                        'DC Kids',
-                        'DC Universe',
-                        'DC Power Visa',
-                    ]
-                ],
-            ];
+        $footerLinksSx = config('footerLinksSx');
+        $footerLinksCentro = config('footerLinksCentro');
+        $footerLinksDx = config('footerLinksDx');
         return view('comics/create', compact('footerLinksSx', 'footerLinksCentro', 'footerLinksDx'));
     }
 
@@ -158,57 +63,9 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $footerLinksSx=[
-            [
-                "title"=>'DC COMICS',
-                "links"=>[
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'TV',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                "title"=>"SHOP",
-                "links"=>[
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ]
-        ];
-        $footerLinksCentro=[
-            [
-                "title"=>"DC",
-                "links"=>[
-                    'Terms of Use',
-                    'Privacy Policy (new)',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subcriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ]
-         ];
-         $footerLinksDx =[
-            [
-                    "title"=>"SITES",
-                    "links"=>[
-                        'DC',
-                        'MAD Magazines',
-                        'DC Kids',
-                        'DC Universe',
-                        'DC Power Visa',
-                    ]
-                ],
-            ];
+        $footerLinksSx = config('footerLinksSx');
+        $footerLinksCentro = config('footerLinksCentro');
+        $footerLinksDx = config('footerLinksDx');
         return view('comics/show', compact('footerLinksSx', 'footerLinksCentro', 'footerLinksDx', 'comic'));
     }
 
@@ -220,57 +77,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        $footerLinksSx=[
-            [
-                "title"=>'DC COMICS',
-                "links"=>[
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'TV',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                "title"=>"SHOP",
-                "links"=>[
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ]
-        ];
-        $footerLinksCentro=[
-            [
-                "title"=>"DC",
-                "links"=>[
-                    'Terms of Use',
-                    'Privacy Policy (new)',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subcriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ]
-         ];
-         $footerLinksDx =[
-            [
-                    "title"=>"SITES",
-                    "links"=>[
-                        'DC',
-                        'MAD Magazines',
-                        'DC Kids',
-                        'DC Universe',
-                        'DC Power Visa',
-                    ]
-                ],
-            ];
+       $footerLinksSx = config('footerLinksSx');
+        $footerLinksCentro = config('footerLinksCentro');
+        $footerLinksDx = config('footerLinksDx');
         return view('comics/edit', compact('footerLinksSx', 'footerLinksCentro', 'footerLinksDx', 'comic'));
     }
 
